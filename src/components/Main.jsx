@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
-// import Text from './Text';
+import { Route, Switch, Redirect } from 'react-router-native';
 
+import SignIn from './SignIn';
 import RepositoryList from './RepositoryList';
 import AppBar from './AppBar';
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    flexShrink: 1,
+    backgroundColor:'#E1E5E8'
   },
 });
 
@@ -16,24 +16,17 @@ const Main = () => {
   return (
     <View style={styles.container}>
       <AppBar/>
-      <RepositoryList/>
+      <Switch>
+        <Route path="/" exact>
+          <RepositoryList />
+        </Route>
+        <Route path="/signin" exact> 
+          <SignIn/>
+        </Route>
+        <Redirect to="/" />
+      </Switch>
     </View>
   );
 };
 
 export default Main;
-
-// const Main = () => {
-//   return (
-//     <>
-//       <Text>Simple text</Text>
-//       <Text style={{ paddingBottom: 10 }}>Text with custom style</Text>
-//       <Text fontWeight="bold" fontSize="subheading">
-//         Bold subheading
-//       </Text>
-//       <Text color="textSecondary">Text with secondary color</Text>
-//     </>
-//   );
-// };
-
-// export default Main;
