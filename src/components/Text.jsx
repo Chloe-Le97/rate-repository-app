@@ -1,5 +1,10 @@
 import React from 'react';
-import { Text as NativeText, StyleSheet } from 'react-native';
+import { Text as NativeText, StyleSheet} from 'react-native';
+import {
+  useFonts,
+  Roboto_400Regular,
+} from "@expo-google-fonts/roboto";
+import {AppLoading} from "expo";
 
 import theme from '../theme';
 
@@ -7,7 +12,7 @@ const styles = StyleSheet.create({
   text: {
     color: theme.colors.textPrimary,
     fontSize: theme.fontSizes.body,
-    fontFamily: theme.fonts.main,
+    fontFamily: theme.fonts,
     fontWeight: theme.fontWeights.normal,
   },
   colorTextSecondary: {
@@ -28,6 +33,15 @@ const styles = StyleSheet.create({
 });
 
 const Text = ({ color, fontSize, fontWeight, textAlign, style, ...props }) => {
+
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+  });
+
+  if(!fontsLoaded){
+    return <AppLoading/>;
+  }
+  
   const textStyle = [
     styles.text,
     color === 'textSecondary' && styles.colorTextSecondary,

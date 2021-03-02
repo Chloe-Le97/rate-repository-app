@@ -1,3 +1,10 @@
+import { Platform } from 'react-native';
+import {
+  useFonts,
+  Roboto_400Regular,
+} from "@expo-google-fonts/roboto";
+
+
 const theme = {
     colors: {
       textPrimary: '#24292e',
@@ -10,9 +17,11 @@ const theme = {
       body: 14,
       subheading: 16,
     },
-    fonts: {
-      main: 'System',
-    },
+    fonts: Platform.select({
+      android: 'Roboto_400Regular',
+      ios: 'Arial_400Regular',
+      default: 'System',
+    }),
     fontWeights: {
       normal: '400',
       bold: '700',
