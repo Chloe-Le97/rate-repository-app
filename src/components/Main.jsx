@@ -8,7 +8,8 @@ import AppBar from './AppBar';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:'#E1E5E8'
+    backgroundColor:'#e1e4e8',
+    minHeight: 1500
   },
 });
 

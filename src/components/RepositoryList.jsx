@@ -59,13 +59,20 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
   return (
-    <FlatList
+    <View style={{marginBottom: 900, flexGrow:1}}>
+          <FlatList
       data={repositories}
       ItemSeparatorComponent={ItemSeparator}
+      contentContainerStyle={{ minHeight: `100%` }}
+      scrollEnabled={true}
       renderItem={({ item, index, ItemSeparatorComponent })=>(
-        <RepositoryItem item={item}/>
+        <View style={{ flex: 1 }}>
+          <RepositoryItem item={item}/>
+        </View>
+        
       )}
     />
+    </View>
   );
 };
 
