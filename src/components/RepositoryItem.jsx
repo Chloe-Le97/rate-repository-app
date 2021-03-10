@@ -11,15 +11,12 @@ const RepositoryItem = (props) =>{
     const styles = StyleSheet.create({
         container:{
             padding: 20,
-            paddingRight: 35,
             backgroundColor: 'white',
         },
         avatar: {
             width: 66,
             height: 66,
             borderRadius: 10,
-            flexGrow:0,
-            // marginTop: 5,
         },
         language: {
             backgroundColor: theme.colors.primary,
@@ -31,12 +28,13 @@ const RepositoryItem = (props) =>{
             flexDirection: 'row',
         },
         rowflexB:{
-            // marginTop: 10,
+            marginTop: 10,
             flexDirection: 'row',
             justifyContent: 'space-around'
         },
         flexItemB:{
-            marginLeft: 20
+            marginLeft: 20,
+            flexShrink:1
         }
       });
 

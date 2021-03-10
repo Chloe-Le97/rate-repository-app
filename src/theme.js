@@ -1,8 +1,5 @@
 import { Platform } from 'react-native';
-import {
-  useFonts,
-  Roboto_400Regular,
-} from "@expo-google-fonts/roboto";
+
 
 
 const theme = {
