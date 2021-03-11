@@ -3,10 +3,10 @@ import { View, StyleSheet, ScrollView, Text, TouchableWithoutFeedback } from 're
 import { Link, useHistory } from "react-router-native";
 import Constants from 'expo-constants';
 
-import theme from '../theme';
-import {USER_AUTH_STATUS} from '../graphql/queries';
+import theme from '../../theme';
+import {USER_AUTH_STATUS} from '../../graphql/queries';
 import { useApolloClient, useQuery } from '@apollo/react-hooks';
-import useAuth from '../hooks/useAuthStorage';
+import useAuth from '../../hooks/useAuthStorage';
 
 // import Text from './Text';
 

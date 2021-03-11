@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Image } from 'react-native';
-import theme from '../theme';
+import theme from '../../theme';
 
-import Text from './Text';
+import Text from '../Text';
 
 const RepositoryItem = (props) =>{
 
@@ -47,9 +47,9 @@ const RepositoryItem = (props) =>{
                 }}
                 />
                 <View style={styles.flexItemB}>
-                    <Text style={{padding: 8}} fontWeight="bold" fontSize="subheading">{item.fullName}</Text>
-                    <Text style={{padding: 8}}>{item.description}</Text>
-                    <View style={{ alignSelf: 'flex-start',padding: 8}} ><Text textAlign="center" style={styles.language} >{item.language}</Text></View>
+                    <Text style={{padding: 8}} fontWeight="bold" fontSize="subheading" testID="fullName">{item.fullName}</Text>
+                    <Text style={{padding: 8}} testID="description">{item.description}</Text>
+                    <View style={{ alignSelf: 'flex-start',padding: 8}} ><Text textAlign="center" style={styles.language} testID="language">{item.language}</Text></View>
                 </View>
             </View>
                 
@@ -63,11 +63,11 @@ const RepositoryItem = (props) =>{
                     <Text textAlign="mid">Stars</Text>
                 </View>
                 <View>
-                    <Text textAlign="mid" fontWeight="bold">{item.reviewCount}</Text>
+                    <Text textAlign="mid" fontWeight="bold" testID="reviews">{item.reviewCount}</Text>
                     <Text textAlign="mid">Reviews</Text>
                 </View>
                 <View>
-                    <Text textAlign="mid" fontWeight="bold">{item.ratingAverage}</Text>
+                    <Text textAlign="mid" fontWeight="bold" testID="rating">{item.ratingAverage}</Text>
                     <Text textAlign="mid">Rating</Text>
                 </View>
                 

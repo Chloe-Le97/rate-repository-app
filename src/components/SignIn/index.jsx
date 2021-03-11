@@ -4,9 +4,9 @@ import { StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
-import FormikTextInput from './FormikTextInput';
-import Text from './Text';
-import useSignIn from '../hooks/useSignIn';
+import FormikTextInput from '../FormikTextInput';
+import Text from '../Text';
+import useSignIn from '../../hooks/useSignIn';
 
 
 const styles = StyleSheet.create({

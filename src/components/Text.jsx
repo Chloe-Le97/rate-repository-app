@@ -33,14 +33,6 @@ const styles = StyleSheet.create({
 });
 
 const Text = ({ color, fontSize, fontWeight, textAlign, style, ...props }) => {
-
-  let [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-  });
-
-  if(!fontsLoaded){
-    return <AppLoading/>;
-  }
   
   const textStyle = [
     styles.text,
