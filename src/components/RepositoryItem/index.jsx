@@ -10,12 +10,12 @@ const RepositoryItem = (props) =>{
 
     const styles = StyleSheet.create({
         container:{
-            padding: 20,
+            padding: 15,
             backgroundColor: 'white',
         },
         avatar: {
-            width: 66,
-            height: 66,
+            width: 50,
+            height: 50,
             borderRadius: 10,
         },
         language: {
@@ -47,9 +47,9 @@ const RepositoryItem = (props) =>{
                 }}
                 />
                 <View style={styles.flexItemB}>
-                    <Text style={{padding: 8}} fontWeight="bold" fontSize="subheading" testID="fullName">{item.fullName}</Text>
-                    <Text style={{padding: 8}} testID="description">{item.description}</Text>
-                    <View style={{ alignSelf: 'flex-start',padding: 8}} ><Text textAlign="center" style={styles.language} testID="language">{item.language}</Text></View>
+                    <Text style={{paddingTop: 8, paddingBottom: 8}} fontWeight="bold" fontSize="subheading" testID="fullName">{item.fullName}</Text>
+                    <Text style={{paddingTop: 8, paddingBottom: 8}} testID="description">{item.description}</Text>
+                    <View style={{ alignSelf: 'flex-start',paddingTop: 8, paddingBottom: 8}} ><Text textAlign="center" style={styles.language} testID="language">{item.language}</Text></View>
                 </View>
             </View>
                 

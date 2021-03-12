@@ -15,8 +15,6 @@ const theme = {
       subheading: 16,
     },
     fonts: Platform.select({
-      android: 'Roboto_400Regular',
-      ios: 'Arial_400Regular',
       default: 'System',
     }),
     fontWeights: {

@@ -21,4 +21,35 @@ export const USER_AUTH_STATUS = gql`
 }
 `;
 
+export const SINGLE_REPOSITORY = gql`
+    query Repository($id: ID!){
+      repository(id: $id ) {
+        id
+        ownerAvatarUrl
+        fullName
+        description
+        language
+        stargazersCount
+        forksCount
+        reviewCount
+        ratingAverage
+        url
+        reviews {
+          edges {
+            node {
+              id
+              text
+              rating
+              createdAt
+              user {
+                id
+                username
+              }
+            }
+          }
+        }
+      }
+    }
+`;
+
 // other queries...

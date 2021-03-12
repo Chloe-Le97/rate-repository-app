@@ -1,9 +1,5 @@
 import React from 'react';
 import { Text as NativeText, StyleSheet} from 'react-native';
-import {
-  useFonts,
-  Roboto_400Regular,
-} from "@expo-google-fonts/roboto";
 import {AppLoading} from "expo";
 
 import theme from '../theme';

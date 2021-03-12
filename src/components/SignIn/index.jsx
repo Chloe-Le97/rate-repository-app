@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   },
   textSubmit:{
     color: 'white',
-
   }
 });
 
