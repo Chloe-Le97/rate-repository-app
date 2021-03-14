@@ -6,6 +6,7 @@ import SignIn from '../SignIn/index';
 import RepositoryList from '../RepositoryList/index';
 import AppBar from '../AppBar';
 import SingleView from '../SingleView';
+import Review from '../Review';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,6 +25,9 @@ const Main = () => {
         </Route>
         <Route path="/signin" exact> 
           <SignIn/>
+        </Route>
+        <Route path="/review" exact>
+          <Review/>
         </Route>
         <Route path="/repo/:id" exact>
           <SingleView/>

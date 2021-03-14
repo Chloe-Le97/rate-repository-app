@@ -5,7 +5,7 @@ export const GET_REPOSITORIES = gql`
     repositories {
       edges{
           node{
-              createdAt, name, description, forksCount, fullName, id, language, ownerAvatarUrl, ratingAverage, reviewCount, stargazersCount
+              createdAt, name, description, forksCount, fullName, id, language, ownerAvatarUrl, ratingAverage, reviewCount, stargazersCount, ownerName
           }
       }
     }
@@ -25,6 +25,7 @@ export const SINGLE_REPOSITORY = gql`
     query Repository($id: ID!){
       repository(id: $id ) {
         id
+        ownerName
         ownerAvatarUrl
         fullName
         description

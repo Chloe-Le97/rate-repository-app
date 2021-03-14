@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
     },
     rating:{
         color: theme.colors.primary,

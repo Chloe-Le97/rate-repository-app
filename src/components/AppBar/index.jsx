@@ -31,6 +31,8 @@ const AppBar = () => {
     // Other options
   });
 
+  console.log(data);
+
   const authStorage = useAuth();
   const apolloClient = useApolloClient();
   const history = useHistory();
@@ -39,7 +41,7 @@ const AppBar = () => {
     await authStorage.removeAccessToken();
     await apolloClient.resetStore();
     history.push('/');
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -48,18 +50,26 @@ const AppBar = () => {
           <Text style={styles.text}>Repositories</Text>
         </Link>
 
+
+
       {data?.authorizedUser?(
+        <>
+          <Link to="/review">
+          <Text style={styles.text}>Create a review</Text>
+        </Link>
         <TouchableWithoutFeedback onPress={signOut}>
           <View>
             <Text style={styles.text}>Sign Out</Text>
           </View>
         </TouchableWithoutFeedback>
+        </>
       ):(
       
         <Link to="/signin">
           <Text style={styles.text}>Sign In</Text>
         </Link>
       )}
+
 
 
       </ScrollView>
