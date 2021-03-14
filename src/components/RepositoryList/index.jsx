@@ -6,7 +6,28 @@ import useRepositories from '../../hooks/useRepositories';
 
 const RepositoryList = () => {
 
-  const { data,loading } = useRepositories();
+  const [selectedOrder, setSelectedOrder] = useState();
+
+  let order;
+  let orderDirection;
+
+  switch(selectedOrder){
+    case 'latest':
+      order = 'CREATED_AT';
+    break;
+    case 'rateHighest': 
+      order = 'RATING_AVERAGE';
+      orderDirection = 'DESC';
+    break;
+    case 'rateLowest': 
+      order = 'RATING_AVERAGE';
+      orderDirection = 'ASC';
+    break;
+    default:
+      order = 'CREATED_AT';
+  }
+
+  const { data,loading } = useRepositories(order,orderDirection);
  
 
   if (loading) {
@@ -17,7 +38,7 @@ const RepositoryList = () => {
 
   console.log(repositories);
 
-  return <RepositoryListContainer repositories={repositories} />;
+  return <RepositoryListContainer selectedOrder={selectedOrder} setSelectedOrder={setSelectedOrder} repositories={repositories} />;
 
 };
 

@@ -64,10 +64,14 @@ const AppBar = () => {
         </TouchableWithoutFeedback>
         </>
       ):(
-      
-        <Link to="/signin">
-          <Text style={styles.text}>Sign In</Text>
-        </Link>
+        <>
+          <Link to="/signin">
+            <Text style={styles.text}>Sign In</Text>
+          </Link>
+          <Link to="/signup">
+            <Text style={styles.text}>Sign Up</Text>
+          </Link>
+        </>
       )}
 
 

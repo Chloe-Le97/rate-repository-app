@@ -2,18 +2,20 @@ import React, {useState, useEffect} from 'react';
 import { FlatList, View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {useHistory} from 'react-router-native';
 import RepositoryItem from '../RepositoryItem';
+import {Picker} from '@react-native-picker/picker';
 
 const styles = StyleSheet.create({
     separator: {
       height: 10,
-    },
+    }
   });
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const RepositoryListContainer = ({repositories}) =>{
+const RepositoryListContainer = ({selectedOrder,setSelectedOrder,repositories}) =>{
 
   const history = useHistory();
+  
 
   console.log(repositories);
   const repositoryNodes = repositories
@@ -22,11 +24,22 @@ const RepositoryListContainer = ({repositories}) =>{
 
 return (
   <View style={{marginBottom: 900, flexGrow:1}}>
+
       <FlatList
         data={repositoryNodes}
         ItemSeparatorComponent={ItemSeparator}
         contentContainerStyle={{ minHeight: `100%` }}
         scrollEnabled={true}
+        ListHeaderComponent={()=> <Picker
+          mode="dialog"
+          selectedValue={selectedOrder}
+          onValueChange={(itemValue, itemIndex) =>
+            setSelectedOrder(itemValue)
+          }>
+          <Picker.Item label="Latest repositories" value="latest" />
+          <Picker.Item label="Highest rated repositories" value="rateHighest" />
+          <Picker.Item label="Lowest rated repositories" value="rateLowest" />
+        </Picker>}
         renderItem={({ item, index, ItemSeparatorComponent })=>(
         
           <View style={{ flex: 1 }}>

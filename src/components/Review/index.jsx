@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: 'white',
   },
-  signInBtn:{
+  reviewBtn:{
     backgroundColor: '#0366d6',
     padding: 10,
     borderRadius: 5,
@@ -57,7 +57,7 @@ export const ReviewForm = ({ onSubmit }) => {
       <FormikTextInput name="rating" placeholder="Rating between 0 and 100"/>
       <FormikTextInput name="text" placeholder="Review"/>
       <TouchableWithoutFeedback onPress={onSubmit}>
-        <View style={styles.signInBtn}>
+        <View style={styles.reviewBtn}>
           <Text style={styles.textSubmit} fontSize = 'subheading' textAlign = 'mid' fontWeight="bold">Create a review</Text>
         </View>
       </TouchableWithoutFeedback>
