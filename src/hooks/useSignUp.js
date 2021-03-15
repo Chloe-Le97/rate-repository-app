@@ -5,7 +5,7 @@ import {CREATE_USER} from '../graphql/mutations';
 import useSignIn from './useSignIn';
 
 const useSignUp = () => {
-    const history = useHistory();
+    // const history = useHistory();S
     const [signIn] = useSignIn();
 
     const [mutate, result] = useMutation(CREATE_USER);
